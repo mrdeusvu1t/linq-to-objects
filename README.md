@@ -1,6 +1,7 @@
 # Task Description
 
 - Add implementations to static methods of the class [???](). 
+    - Join operations: see also [Join Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/join-operations)
     - 
 The task detail definitions are given in the XML-comments for the methods.
 - Build a solution in Visual Studio. Make sure there are no compiler errors and warnings, fix these issues and rebuild the solution.
