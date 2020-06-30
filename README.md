@@ -1,7 +1,7 @@
 # Task Description
 
 - Add implementations to static methods of the following classes 
-    - [FilteringData](https://gitlab.com/AnzhelikaKravchuk/linq-to-objects/-/blob/master/Linq/FilteringData.cs): see also [Filtering Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/filtering-data)+  
+    - [FilteringData](https://gitlab.com/AnzhelikaKravchuk/linq-to-objects/-/blob/master/Linq/FilteringData.cs): see also [Filtering Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/filtering-data)  
     - Projection operations: see also [Projection Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/projection-operations) + 
     - Sorting data: see also [Sorting Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/sorting-data)
     - Generation operations: [Generation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/generation-operations)
