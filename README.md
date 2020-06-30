@@ -16,7 +16,7 @@
     - [QuantifierOperations](/Linq/QuantifierOperations.cs). Additional information on quantifier operations see here [Quantifier Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/quantifier-operations). 
     - [QueryExecution](/Linq/QueryExecution.cs). Additional information on query execution see here [Classification of Standard Query Operators by Manner of Execution (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution).      
 
-The task detail definitions are given in the XML-comments for the methods in cases of unit tests.
+The task detail definitions are given in the XML-comments for the methods and in test cases of unit tests.
 - Build a solution in Visual Studio. Make sure there are no compiler errors and warnings, fix these issues and rebuild the solution.
 - Run all unit tests with Visual Studio and make sure there are no failed unit tests. Fix your code to make all tests GREEN.
 - Review all your changes in the codebase before staging the changes and creating a commit.
