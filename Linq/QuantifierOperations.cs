@@ -41,7 +41,7 @@ namespace Linq
         /// <summary>
         /// Determines if there is at least one word in the list containing “ei”.
         /// </summary>
-        /// <returns>True.</returns>
+        /// <returns>true.</returns>
         public static bool AnyMatchingElements()
         {
             string[] words = { "believe", "relief", "receipt", "field" };
@@ -63,7 +63,7 @@ namespace Linq
         /// <summary>
         /// Determines whether all elements are odd.
         /// </summary>
-        /// <returns>True.</returns>
+        /// <returns>true.</returns>
         public static bool AllMatchedElements()
         {
             int[] numbers = { 1, 11, 3, 19, 41, 65, 19 };
@@ -85,7 +85,7 @@ namespace Linq
         /// <summary>
         /// Determines whether the sequence contains the given element.
         /// </summary>
-        /// <returns>True if the given element 3 is present.</returns>
+        /// <returns>true.</returns>
         public static bool HasAThree()
         {
             int[] numbers =  { 2, 3, 4 };
