@@ -50,7 +50,7 @@ namespace Linq
         /// Produces a sequence of the uppercase and lowercase versions of each word in the original array.
         /// </summary>
         /// <returns>The sequence of the uppercase and lowercase versions of each word in the original array.</returns>
-        public static IEnumerable<(string Upper, string Lower)> SelectByCase()
+        public static IEnumerable<(string upper, string lower)> SelectByCase()
         {
             string[] words = {"aPPLE", "BlUeBeRrY", "cHeRry"};
             
@@ -61,7 +61,7 @@ namespace Linq
         /// Produces a sequence containing text representations of digits and whether their length is even or odd.
         /// </summary>
         /// <returns>The sequence containing text representations of digits and whether their length is even or odd.</returns>
-        public static IEnumerable<(string Digit, bool Even)> SelectEvenOrOddNumbers()
+        public static IEnumerable<(string digit, bool even)> SelectEvenOrOddNumbers()
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
             string[] strings = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
@@ -73,7 +73,7 @@ namespace Linq
         /// Produces a sequence containing some properties of Products, including ProductName, Category and UnitPrice.
         /// </summary>
         /// <returns>The sequence containing some properties of Products, including ProductName, Category and UnitPrice.</returns>
-        public static IEnumerable<(string ProductName, string Category, decimal Price)> SelectPropertySubset()
+        public static IEnumerable<(string productName, string category, decimal price)> SelectPropertySubset()
         {
             List<Product> products = Products.ProductList;
             
@@ -84,7 +84,7 @@ namespace Linq
         /// Determines if the value of integers in an array match their position in the array.
         /// </summary>
         /// <returns>The sequence in which for each integer it is determined whether its value in the array matches their position in the array. </returns>
-        public static IEnumerable<(int Number, bool InPlace)> SelectWithIndex()
+        public static IEnumerable<(int number, bool inPlace)> SelectWithIndex()
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
             
@@ -119,7 +119,7 @@ namespace Linq
         /// Selects all orders where the order total is less than 500.00.
         /// </summary>
         /// <returns>All orders where the order total is less than 500.00.</returns>
-        public static IEnumerable<(string CustomerId, int OrderId, decimal Total)> SelectFromChildSequence()
+        public static IEnumerable<(string customerId, int orderId, decimal total)> SelectFromChildSequence()
         {
             List<Customer> customers = Customers.CustomerList;
             
@@ -130,7 +130,7 @@ namespace Linq
         /// Selects all orders where the order was made in 1998 or later.
         /// </summary>
         /// <returns>All orders where the order was made in 1998 or later.</returns>
-        public static IEnumerable<(string CustomerId, int OrderId, string OrderDate)> SelectManyWithWhere()
+        public static IEnumerable<(string customerId, int orderId, string orderDate)> SelectManyWithWhere()
         {
             List<Customer> customers = Customers.CustomerList;
             var dateTime = new DateTime(1998, 1, 1);
@@ -142,7 +142,7 @@ namespace Linq
         /// Selects all orders where the order total is greater than 2000.00.
         /// </summary>
         /// <returns>All orders where the order total is greater than 2000.00.</returns>
-        public static IEnumerable<(string CustomerId, int OrderId, decimal TotalValue)> SelectManyWhereAssignment()
+        public static IEnumerable<(string customerId, int orderId, decimal totalValue)> SelectManyWhereAssignment()
         {
             List<Customer> customers = Customers.CustomerList;
             
@@ -153,7 +153,7 @@ namespace Linq
         /// Select all customers in Washington region ("WA") with an order date greater than or equal to the given.
         /// </summary>
         /// <returns>All customers in Washington region with an order date greater than or equal to the given.</returns>
-        public static IEnumerable<(string CustomerId, int OrderId)> SelectMultipleWhereClauses()
+        public static IEnumerable<(string customerId, int orderId)> SelectMultipleWhereClauses()
         {
             List<Customer> customers = Customers.CustomerList;
             DateTime cutoffDate = new DateTime(1997, 1, 1);
