@@ -8,7 +8,7 @@
     - [PartitioningData](/Linq/PartitioningData.cs). Additional information on partitioning data see here [Partitioning Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/partitioning-data)
     - [ConvertingDataTypes](/Linq/ConvertingDataTypes.cs). Additional information on converting data types see here [Converting Data Types (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/converting-data-types).
     - [SetOperations](/Linq/SetOperations.cs). Additional information on set operations see here [Set Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/set-operations).
-    - [ElementOperations](/Linq/ElementOperations.cs).Additional information on  element operations see here [Element Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/element-operations)
+    - [ElementOperations](/Linq/ElementOperations.cs). Additional information on  element operations see here [Element Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/element-operations)
     - Join operations: see also [Join Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/join-operations)
     - Quantifier operations: see also [Quantifier Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/quantifier-operations)
     - Aggregation Operations (C#): see also [Aggregation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/aggregation-operations)    
