@@ -13,7 +13,9 @@
     - [AggregationOperations](/Linq/AggregationOperations.cs). Additional information on aggregation operations  see here [Aggregation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/aggregation-operations).    
     - [SequenceOperations](/Linq/SequenceOperations.cs). Additional information on sequence operations  see here [Concatenation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/concatenation-operations), [Enumerable.Zip Method](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.zip?view=netcore-3.1).
     - [JoinOperations](/Linq/JoinOperations.cs). Additional information on join operations see here [Join Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/join-operations).
-    - [QuantifierOperations](/Linq/QuantifierOperations.cs). Additional information on quantifier operations see here [Quantifier Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/quantifier-operations).   
+    - [QuantifierOperations](/Linq/QuantifierOperations.cs). Additional information on quantifier operations see here [Quantifier Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/quantifier-operations). 
+    - [QueryExecution](/Linq/QueryExecution.cs). Additional information on query execution see here [Classification of Standard Query Operators by Manner of Execution (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution).      
+
 The task detail definitions are given in the XML-comments for the methods and test cases of unit tests.
 - Build a solution in Visual Studio. Make sure there are no compiler errors and warnings, fix these issues and rebuild the solution.
 - Run all unit tests with Visual Studio and make sure there are no failed unit tests. Fix your code to make all tests GREEN.
@@ -21,10 +23,13 @@ The task detail definitions are given in the XML-comments for the methods and te
 - Stage your changes, create a commit and publish your changes to the remote repository.
 
 ## See also
+- C# guide. Programming guide. Programming concepts.
+    - [Language Integrated Query (LINQ)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/)
 - C# Guide. Microsoft Documentation
-    - [Work with Language-Integrated Query (LINQ)](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq)
-    - [Standard Query Operators Overview (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/standard-query-operators-overview)
+    - [Work with Language-Integrated Query (LINQ)](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq).
+    - [Query Expression Syntax for Standard Query Operators (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators).
+    - [Standard Query Operators Overview (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/standard-query-operators-overview).
 - C# concepts. Microsoft Documentation
-    - [Language Integrated Query (LINQ)](https://docs.microsoft.com/en-us/dotnet/csharp/linq/)
+    - [Language Integrated Query (LINQ)](https://docs.microsoft.com/en-us/dotnet/csharp/linq/).
 - .NET API. Microsoft Documentation. 
-    - [Enumerable Class](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=netcore-3.1)
+    - [Enumerable Class](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=netcore-3.1).
