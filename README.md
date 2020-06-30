@@ -10,10 +10,9 @@
     - [SetOperations](/Linq/SetOperations.cs). Additional information on set operations see here [Set Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/set-operations).
     - [ElementOperations](/Linq/ElementOperations.cs). Additional information on element operations see here [Element Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/element-operations)
     - [GroupingData](/Linq/GroupingData.cs). Additional information on grouping data see here [Grouping Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/grouping-data).
-    - 
+    - [AggregationOperations](/Linq/AggregationOperations.cs). Additional information on aggregation operations  see here [Aggregation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/aggregation-operations).    
     - Join operations: see also [Join Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/join-operations)
     - Quantifier operations: see also [Quantifier Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/quantifier-operations)
-    - Aggregation Operations (C#): see also [Aggregation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/aggregation-operations)    
 The task detail definitions are given in the XML-comments for the methods and test cases of unit tests.
 - Build a solution in Visual Studio. Make sure there are no compiler errors and warnings, fix these issues and rebuild the solution.
 - Run all unit tests with Visual Studio and make sure there are no failed unit tests. Fix your code to make all tests GREEN.
