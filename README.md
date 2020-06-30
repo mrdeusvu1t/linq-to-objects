@@ -7,7 +7,7 @@
     - [GenerationOperations](/Linq/GenerationOperations.cs). Additional information on generation operations see here [Generation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/generation-operations).
     - [PartitioningData](/Linq/PartitioningData.cs). Additional information on partitioning data see here [Partitioning Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/partitioning-data)
     - [ConvertingDataTypes](/Linq/ConvertingDataTypes.cs). Additional information on converting data types see here [Converting Data Types (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/converting-data-types).
-    - Set operations: see also [Set Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/set-operations)
+    - [SetOperations](/Linq/SetOperations.cs). Additional information on set operations: see also [Set Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/set-operations).
     - 
     - Element operations: see also [Element Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/element-operations)
     - Join operations: see also [Join Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/join-operations)
@@ -26,4 +26,4 @@ The task detail definitions are given in the XML-comments for the methods and te
 - C# concepts. Microsoft Documentation
     - [Language Integrated Query (LINQ)](https://docs.microsoft.com/en-us/dotnet/csharp/linq/)
 - .NET API. Microsoft Documentation. 
-    - [Enumerable Class](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=netcore-3.1) 
+    - [Enumerable Class](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=netcore-3.1)
