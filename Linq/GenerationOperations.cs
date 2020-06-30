@@ -25,7 +25,7 @@ namespace Linq
         /// </summary>
         /// <returns> The sequence of integral numbers in the specified range with additional information about their parity-oddness.
         /// </returns>
-        public static IEnumerable<(int Number,string OddEven)> RangeOfIntegers()
+        public static IEnumerable<(int number,string oddEven)> RangeOfIntegers()
         {
             throw new NotImplementedException();
         }
