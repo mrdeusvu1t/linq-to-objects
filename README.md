@@ -2,7 +2,7 @@
 
 - Add implementations to static methods of the following classes 
     - [FilteringData](/Linq/FilteringData.cs). For filtering data see also [Filtering Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/filtering-data).  
-    - Projection operations: see also [Projection Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/projection-operations) + 
+    - [ProectionOperations](/Linq/ProectionOperations.cs). For projection operations see also [Projection Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/projection-operations).
     - Sorting data: see also [Sorting Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/sorting-data)
     - Generation operations: [Generation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/generation-operations)
     - Partitioning data: see also [Partitioning Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/partitioning-data)
