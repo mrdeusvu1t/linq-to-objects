@@ -5,7 +5,7 @@
     - [ProectionOperations](Linq/ProjectionOperations.cs). Additional information on projection operations see here [Projection Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/projection-operations).
     - [SortingData](/Linq/SortingData.cs). Additional information on sorting data see here [Sorting Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/sorting-data).
     - [GenerationOperations](/Linq/GenerationOperations.cs). Additional information on generation operations see here [Generation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/generation-operations).
-    - Partitioning data: see also [Partitioning Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/partitioning-data)
+    - [PartitioningData](/Linq/PartitioningData.cs). Additional information on partitioning data see here [Partitioning Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/partitioning-data)
     - Converting data types: see also [Converting Data Types (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/converting-data-types)
     - Set operations: see also [Set Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/set-operations)
     - 
