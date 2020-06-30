@@ -11,6 +11,7 @@
     - [ElementOperations](/Linq/ElementOperations.cs). Additional information on element operations see here [Element Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/element-operations)
     - [GroupingData](/Linq/GroupingData.cs). Additional information on grouping data see here [Grouping Data (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/grouping-data).
     - [AggregationOperations](/Linq/AggregationOperations.cs). Additional information on aggregation operations  see here [Aggregation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/aggregation-operations).    
+    - [SequenceOperations](/Linq/SequenceOperations.cs). Additional information on sequence operations  see here [Concatenation Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/concatenation-operations), [Enumerable.Zip Method](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.zip?view=netcore-3.1).
     - Join operations: see also [Join Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/join-operations)
     - Quantifier operations: see also [Quantifier Operations (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/quantifier-operations)
 The task detail definitions are given in the XML-comments for the methods and test cases of unit tests.
