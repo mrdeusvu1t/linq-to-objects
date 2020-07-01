@@ -8,19 +8,19 @@ namespace Linq.Tests
     public class QueryExecutionTests
     {
         [Test]
-        public void LazyExecutionTest()
+        public void DeferredExecutionTest()
         {
             var expected = new List<int> {9, 8, 6, 7, 10};
             
-            CollectionAssert.AreEqual(expected, LazyExecution());
+            CollectionAssert.AreEqual(expected, DeferredExecution());
         }
         
         [Test]
-        public void EagerExecutionTest()
+        public void ImmediateExecutionTest()
         {
             var expected = new List<int> {9, 8, 6, 7};
             
-            CollectionAssert.AreEqual(expected, EagerExecution());
+            CollectionAssert.AreEqual(expected, ImmediateExecution());
         }
     }
 }
