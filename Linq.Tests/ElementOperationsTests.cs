@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Linq.DataSources;
 using NUnit.Framework;
 using static Linq.ElementOperations;
@@ -11,10 +11,13 @@ namespace Linq.Tests
         [Test]
         public void ElementOperationsTest()
         {
-            var expected = new Product()
+            var expected = new Product
             {
-                ProductId = 12, ProductName = "Queso Manchego La Pastora", Category = "Dairy Products",
-                UnitPrice = 38.0000m, UnitsInStock = 86
+                ProductId = 11,
+                ProductName = "Queso Cabrales",
+                Category = "Dairy Products",
+                UnitPrice = 21.0000M,
+                UnitsInStock = 22
             };
             
             Assert.AreEqual(expected, FirstElement());
