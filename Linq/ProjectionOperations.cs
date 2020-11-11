@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Linq.DataSources;
 
@@ -92,9 +92,9 @@ namespace Linq
         }
 
         /// <summary>
-        /// Produce a sequence of strings representing a text version of a sequence of integers less than or equal to 5.
+        /// Produce a sequence of strings representing a text version of a sequence of integers less than 5.
         /// </summary>
-        /// <returns> The sequence of strings representing a text version of a sequence of integers less than or equal to 5.</returns>
+        /// <returns> The sequence of strings representing a text version of a sequence of integers less than 5.</returns>
         public static IEnumerable<string> SelectWithWhere()
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
