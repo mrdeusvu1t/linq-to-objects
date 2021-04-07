@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Linq.DataSources;
 
 namespace Linq
@@ -19,8 +20,13 @@ namespace Linq
         public static IEnumerable<int> Take()
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
-            
-            throw new NotImplementedException();
+
+            var myNumbers = numbers.Take(3);
+
+			foreach (var n in myNumbers)
+			{
+                yield return n;
+			}
         }
 
         /// <summary>
@@ -30,8 +36,17 @@ namespace Linq
         public static IEnumerable<(string customerId, int orderId, DateTime orderDate)> CustomersTake()
         {
             List<Customer> customers = Customers.CustomerList;
-            
-            throw new NotImplementedException();
+
+            var myCustomers = (from c in customers
+                               where c.Region == "WA"
+                               from o in c.Orders
+                               select new { c.CustomerId, o.OrderId, o.OrderDate }).Take(3);
+                              
+
+            foreach (var c in myCustomers)
+			{
+                yield return (c.CustomerId, c.OrderId, c.OrderDate);
+            }
         }
 
         /// <summary>
@@ -42,7 +57,12 @@ namespace Linq
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
 
-            throw new NotImplementedException();
+            var myNumbers = numbers.Skip(4);
+
+            foreach(var n in myNumbers)
+			{
+                yield return n;
+			}
         }
 
         /// <summary>
@@ -53,7 +73,16 @@ namespace Linq
         {
             List<Customer> customers = Customers.CustomerList;
 
-            throw new NotImplementedException();
+            var myCustomers = (from c in customers
+                               where c.Region == "WA"
+                               from o in c.Orders
+                               select new { c.CustomerId, o.OrderId, o.OrderDate }).Skip(2);
+
+
+            foreach (var c in myCustomers)
+            {
+                yield return (c.CustomerId, c.OrderId, c.OrderDate);
+            }
         }
 
         /// <summary>
@@ -64,7 +93,10 @@ namespace Linq
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
 
-            throw new NotImplementedException();
+            foreach (var number in numbers.TakeWhile(i => i < 6))
+			{
+                yield return number;
+			}
         }
 
         /// <summary>
@@ -75,7 +107,12 @@ namespace Linq
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
 
-            throw new NotImplementedException();
+            var myNumbers = numbers.TakeWhile((n, index) => n > index);
+
+            foreach (var n in myNumbers)
+            {
+                yield return n;
+            }
         }
 
         /// <summary>
@@ -86,7 +123,10 @@ namespace Linq
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
 
-            throw new NotImplementedException();
+            foreach (var number in numbers.SkipWhile(n => n % 3 != 0))
+			{
+                yield return number;
+			}
         }
 
         /// <summary>
@@ -97,7 +137,10 @@ namespace Linq
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
 
-            throw new NotImplementedException();
+            foreach(var number in numbers.SkipWhile((n, index) => n > index))
+			{
+                yield return number;
+			}
         }
     }
 }

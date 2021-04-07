@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using Linq.DataSources;
 
 namespace Linq
@@ -20,7 +22,10 @@ namespace Linq
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
 
-            throw new NotImplementedException();
+            foreach (var number in numbers.Select(n => n + 1))
+			{
+                yield return number;
+			}
         }
 
         /// <summary>
@@ -31,7 +36,10 @@ namespace Linq
         {
             List<Product> products = Products.ProductList;
             
-            throw new NotImplementedException();
+            foreach (var product in products.Select(p => p.ProductName))
+			{
+                yield return product;
+			}
         }
 
         /// <summary>
@@ -42,8 +50,14 @@ namespace Linq
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
             string[] strings = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            
-            throw new NotImplementedException();
+
+            var myTransform = from n in numbers
+                              select strings[n];
+
+            foreach(var item in myTransform)
+			{
+                yield return item;
+			}
         }
 
         /// <summary>
@@ -53,8 +67,13 @@ namespace Linq
         public static IEnumerable<(string upper, string lower)> SelectByCase()
         {
             string[] words = {"aPPLE", "BlUeBeRrY", "cHeRry"};
-            
-            throw new NotImplementedException();
+
+            var myWords = words.Select(w => (w.ToUpper(), w.ToLower()));
+
+            foreach(var w in myWords)
+			{
+                yield return (w.Item1, w.Item2);
+			}
         }
 
         /// <summary>
@@ -65,8 +84,14 @@ namespace Linq
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
             string[] strings = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            
-            throw new NotImplementedException();
+
+            var myNumbers = from n in numbers
+                            select (strings[n], n % 2 == 0);
+
+            foreach (var n in myNumbers)
+			{
+                yield return (n.Item1, n.Item2);
+			}
         }
 
         /// <summary>
@@ -76,8 +101,14 @@ namespace Linq
         public static IEnumerable<(string productName, string category, decimal price)> SelectPropertySubset()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            var myProducts = from p in products
+                             select (p.ProductName, p.Category, p.UnitPrice);
+
+            foreach(var p in myProducts)
+			{
+                yield return (p.ProductName, p.Category, p.UnitPrice);
+			}
         }
 
         /// <summary>
@@ -86,9 +117,15 @@ namespace Linq
         /// <returns>The sequence in which for each integer it is determined whether its value in the array matches their position in the array. </returns>
         public static IEnumerable<(int number, bool inPlace)> SelectWithIndex()
         {
-            int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
-            
-            throw new NotImplementedException();
+            int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            var myNumbers = numbers.Select((n, i) => new { number = n, index = i })
+                            .Select(n => (n.number, n.index == n.number));
+
+            foreach (var n in myNumbers)
+			{
+                yield return (n.number, n.Item2);
+			}
         }
 
         /// <summary>
@@ -99,8 +136,15 @@ namespace Linq
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
             string[] digits = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            
-            throw new NotImplementedException();
+
+            var myDigits = from n in numbers
+                              where n < 5
+                              select digits[n];
+
+            foreach (var digit in myDigits)
+            {
+                yield return digit;
+            }
         }
 
         /// <summary>
@@ -111,8 +155,16 @@ namespace Linq
         {
             int[] numbersA = {0, 2, 4, 5, 6, 8, 9};
             int[] numbersB = {1, 3, 5, 7, 8};
-            
-            throw new NotImplementedException();
+
+            var sequence = from a in numbersA
+                           from b in numbersB
+                           where a < b
+                           select (a, b);
+
+            foreach(var item in sequence)
+			{
+                yield return (item.a, item.b);
+			}
         }
 
         /// <summary>
@@ -122,8 +174,16 @@ namespace Linq
         public static IEnumerable<(string customerId, int orderId, decimal total)> SelectFromChildSequence()
         {
             List<Customer> customers = Customers.CustomerList;
-            
-            throw new NotImplementedException();
+
+            var myCustomers = from c in customers
+                              from o in c.Orders
+                              where o.Total < 500
+                              select (c.CustomerId, o.OrderId, o.Total);
+
+            foreach(var c in myCustomers)
+			{
+                yield return (c.CustomerId, c.OrderId, c.Total);
+			}
         }
 
         /// <summary>
@@ -134,8 +194,16 @@ namespace Linq
         {
             List<Customer> customers = Customers.CustomerList;
             var dateTime = new DateTime(1998, 1, 1);
-            
-            throw new NotImplementedException();
+
+            var myCustomers = from c in customers
+                              from o in c.Orders
+                              where o.OrderDate.Year >= dateTime.Year
+                              select (c.CustomerId, o.OrderId, o.OrderDate);
+
+            foreach (var c in myCustomers)
+			{
+                yield return (c.CustomerId, c.OrderId, c.OrderDate.ToString("dd-MMM-yy", new CultureInfo("en-US")));
+			}
         }
 
         /// <summary>
@@ -145,8 +213,16 @@ namespace Linq
         public static IEnumerable<(string customerId, int orderId, decimal totalValue)> SelectManyWhereAssignment()
         {
             List<Customer> customers = Customers.CustomerList;
-            
-            throw new NotImplementedException();
+
+            var myCustomers = from c in customers
+                              from o in c.Orders
+                              where o.Total > 2000
+                              select (c.CustomerId, o.OrderId, o.Total);
+
+            foreach (var c in myCustomers)
+			{
+                yield return (c.CustomerId, c.OrderId, c.Total);
+			}
         }
 
         /// <summary>
@@ -158,8 +234,16 @@ namespace Linq
             List<Customer> customers = Customers.CustomerList;
             DateTime cutoffDate = new DateTime(1997, 1, 1);
             string region = "WA";
-            
-            throw new NotImplementedException();
+
+            var myCustomers = from c in customers
+                              from o in c.Orders
+                              where c.Region == region && o.OrderDate >= cutoffDate
+                              select (c.CustomerId, o.OrderId);
+
+            foreach(var c in myCustomers)
+			{
+                yield return (c.CustomerId, c.OrderId);
+			}
         }
 
         /// <summary>
@@ -169,8 +253,15 @@ namespace Linq
         public static IEnumerable<string> IndexedSelectMany()
         {
             List<Customer> customers = Customers.CustomerList;
-            
-            throw new NotImplementedException();
+
+            var myCustomers =
+                customers
+                .SelectMany((customer, index) => customer.Orders.Select(str => $"Customer #{index + 1} has an order with OrderID {str.OrderId}"));
+
+            foreach (var c in myCustomers)
+			{
+                yield return c;
+			}
         }
     }
 }

@@ -23,7 +23,11 @@ namespace Linq
         {
             string[] words = {"cherry", "apple", "blueberry"};
             
-            throw new NotImplementedException();
+            foreach (var w in words.Select(w => w).OrderBy(w => w))
+			{
+                yield return w;
+			}
+            
         }
 
         /// <summary>
@@ -34,7 +38,10 @@ namespace Linq
         {
             string[] words = {"cherry", "apple", "blueberry"};
 
-            throw new NotImplementedException();
+            foreach (var w in words.Select(w => w).OrderBy(w => w.Length))
+            {
+                yield return w;
+            }
         }
 
         /// <summary>
@@ -45,7 +52,10 @@ namespace Linq
         {
             List<Product> products = Products.ProductList;
 
-            throw new NotImplementedException();
+            foreach (var p in products.Select(p => p).OrderBy(p => p.ProductName))
+            {
+                yield return p;
+            }
         }
 
 
@@ -56,8 +66,11 @@ namespace Linq
         public static IEnumerable<string> OrderByWithCustomComparer()
         {
             string[] words = {"aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"};
-            
-            throw new NotImplementedException();
+
+            foreach (var w in words.Select(w => w).OrderBy(w => w))
+            {
+                yield return w;
+            }
         }
 
         /// <summary>
@@ -67,8 +80,11 @@ namespace Linq
         public static IEnumerable<double> OrderByDescending()
         {
             double[] doubles = {1.7, 2.3, 1.9, 4.1, 2.9};
-            
-            throw new NotImplementedException();
+
+            foreach (var d in doubles.Select(d => d).OrderByDescending(d => d))
+            {
+                yield return d;
+            }
         }
 
         /// <summary>
@@ -78,8 +94,11 @@ namespace Linq
         public static IEnumerable<Product> OrderProductsDescending()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            foreach (var p in products.Select(p => p).OrderByDescending(p => p.UnitsInStock))
+            {
+                yield return p;
+            }
         }
 
         /// <summary>
@@ -90,7 +109,10 @@ namespace Linq
         {
             string[] words = {"aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"};
 
-            throw new NotImplementedException();
+            foreach (var w in words.Select(w => w).OrderByDescending(w => w))
+            {
+                yield return w;
+            }
         }
 
         /// <summary>
@@ -101,7 +123,10 @@ namespace Linq
         {
             string[] digits = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
-            throw new NotImplementedException();
+            foreach(var d in digits.Select(d => d).OrderBy(d => d.Length).ThenBy(d => d))
+			{
+                yield return d;
+			}
         }
 
         /// <summary>
@@ -111,8 +136,11 @@ namespace Linq
         public static IEnumerable<string> ThenByCustom()
         {
             string[] words = {"aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"};
-            
-            throw new NotImplementedException();
+
+            foreach (var w in words.Select(w => w).OrderBy(w => w.Length).ThenBy(w => w))
+            {
+                yield return w;
+            }
         }
 
         /// <summary>
@@ -122,8 +150,11 @@ namespace Linq
         public static IEnumerable<Product> ThenByDifferentOrdering()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            foreach (var p in products.Select(p => p).OrderBy(p => p.Category).ThenByDescending(p => p.UnitPrice))
+            {
+                yield return p;
+            }
         }
 
         /// <summary>
@@ -133,8 +164,11 @@ namespace Linq
         public static IEnumerable<string> CustomThenByDescending()
         {
             string[] words = {"aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"};
-            
-            throw new NotImplementedException();
+
+            foreach (var w in words.Select(w => w).OrderBy(w => w.Length).ThenByDescending(w => w))
+            {
+                yield return w;
+            }
         }
 
         /// <summary>
@@ -143,9 +177,15 @@ namespace Linq
         /// <returns>Reverse sequence of digits whose second letter is 'i'.</returns>
         public static IEnumerable<string> OrderingReversal()
         {
+            //                                                             
             string[] digits = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
-            throw new NotImplementedException();
+            var result = (from d in digits where d[1] == 'i' select d).Reverse();
+
+            foreach (var d in result)
+            {
+                yield return d;
+            }
         }
     }
 }

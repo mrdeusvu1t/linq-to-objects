@@ -20,8 +20,16 @@ namespace Linq
         public static IEnumerable<IGrouping<char, string>> GroupByProperty()
         {
             string[] words = {"blueberry", "chimpanzee", "abacus", "banana", "apple", "cheese"};
-            
-            throw new NotImplementedException();
+
+            var myWords = from w in words
+                          orderby w[0]
+                          group w by w[0];
+                          
+
+            foreach (var word in myWords)
+			{
+                yield return word;
+			}
         }
         
         /// <summary>
@@ -31,8 +39,15 @@ namespace Linq
         public static IEnumerable<(int remainder, IEnumerable<int> numbers)> Grouping()
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
-            
-            throw new NotImplementedException();
+
+            var myNumbers = from n in numbers
+                            group n by n % 5 into g
+                            select new { remainder = g.Key, numbers = g };
+
+            foreach (var n in myNumbers)
+			{
+                yield return (n.remainder, n.numbers);
+			}
         }
 
         /// <summary>
@@ -42,8 +57,21 @@ namespace Linq
         public static IEnumerable<(string category, IEnumerable<string> productsName)> GroupByCategory()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            var myProducts = from p in products
+                             group p.ProductName by p.Category into g
+                             where g.Count() <= 7
+                             select new
+                             {
+                                 category = g.Key,
+                                 productsName = g.ToList()
+                             };
+                             
+
+            foreach (var p in myProducts)
+			{
+                yield return (p.category, p.productsName);
+            }
         }
 
         /// <summary>
@@ -55,8 +83,20 @@ namespace Linq
             string[] anagrams =
                 {"from   ", "  mane", " salt", " earn ", "name   ", "  last   ", " near ", " form  ", "mean"};
 
-            throw new NotImplementedException();
+            var myAnagrams = anagrams.GroupBy(
+                w => w.Trim(),
+                a => a.ToLower(),
+                new AnagramEqualityComparer()
+                );
+
+            foreach (var a in myAnagrams)
+			{
+                yield return a;
+			}
+
         }
+
+
 
         /// <summary>
         /// Partitions a list of words by custom comparer <see cref="AnagramEqualityComparer"/>.
@@ -67,7 +107,16 @@ namespace Linq
             string[] anagrams =
                 {"from   ", "  mane", " salt", " earn ", "name   ", "  last   ", " near ", " form  ", "mean"};
 
-            throw new NotImplementedException();
+            var myAnagrams = anagrams.GroupBy(
+                w => w.Trim(),
+                a => a.ToUpper(),
+                new AnagramEqualityComparer()
+                );
+
+            foreach (var a in myAnagrams)
+            {
+                yield return a;
+            }
         }
     }
 }

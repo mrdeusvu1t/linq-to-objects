@@ -17,8 +17,10 @@ namespace Linq
         public static double[] ConvertToArray()
         {
             double[] doubles = {1.7, 2.3, 1.9, 4.1, 2.9};
-            
-            throw new NotImplementedException();
+
+            var myDoubles = from i in doubles orderby i descending select i; 
+
+            return myDoubles.ToArray();
         }
 
         /// <summary>
@@ -28,8 +30,10 @@ namespace Linq
         public static List<string> ConvertToList()
         {
             string[] words = {"cherry", "apple", "blueberry"};
-            
-            throw new NotImplementedException();
+
+            var myWords = from s in words orderby s select s;
+
+            return myWords.ToList();
         }
 
         /// <summary>
@@ -44,8 +48,15 @@ namespace Linq
                 (Name: "Bob", Score: 40),
                 (Name: "Cathy", Score: 45)
             };
-            
-            throw new NotImplementedException();
+
+            var myScoreRecords = (from sr in scoreRecords
+                                 select new
+                                 {
+                                     key = sr.Name,
+                                     value = (sr.Name, sr.Score)
+                                 }).ToDictionary(x => x.key, x => x.value);
+
+            return myScoreRecords;
         }
 
         /// <summary>
@@ -55,8 +66,13 @@ namespace Linq
         public static IEnumerable<double> OfTypeDoubles()
         {
             object[] numbers = {null, 1.0, "two", 3, "four", 5, "six", 7.0};
-            
-            throw new NotImplementedException();
+
+            var myNumbers = from i in numbers where i is double select i;
+
+            foreach (double d in myNumbers)
+			{
+                yield return d;
+			}
         }
     }
 }

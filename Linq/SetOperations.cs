@@ -21,8 +21,11 @@ namespace Linq
         public static IEnumerable<int> Distinct()
         {
             int[] numbers = {2, 2, 3, 5, 5};
-            
-            throw new NotImplementedException();
+
+            foreach (var n in numbers.Concat(numbers).Distinct())
+			{
+                yield return n;
+			}
         }
 
         /// <summary>
@@ -32,8 +35,13 @@ namespace Linq
         public static IEnumerable<string> DistinctPropertyValues()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            var result = products.Select(p => p.Category).Distinct();
+
+            foreach (var p in result)
+            {
+                yield return p;
+            }
         }
 
         /// <summary>
@@ -44,8 +52,13 @@ namespace Linq
         {
             int[] numbersA = {0, 2, 4, 5, 6, 8, 9};
             int[] numbersB = {1, 3, 5, 7, 8};
-            
-            throw new NotImplementedException();
+
+            var result = numbersA.Union(numbersB);
+
+            foreach(var n in result)
+			{
+                yield return n;
+			}
         }
 
         /// <summary>
@@ -56,8 +69,13 @@ namespace Linq
         {
             List<Product> products = Products.ProductList;
             List<Customer> customers = Customers.CustomerList;
-            
-            throw new NotImplementedException();
+
+            var result = products.Select(p => p.ProductName[0]).Union(customers.Select(c => c.CompanyName[0]));
+
+            foreach (var item in result)
+			{
+                yield return item;
+			}
         }
 
         /// <summary>
@@ -68,8 +86,13 @@ namespace Linq
         {
             int[] numbersA = {0, 2, 4, 5, 6, 8, 9};
             int[] numbersB = {1, 3, 5, 7, 8};
-            
-            throw new NotImplementedException();
+
+            var result = numbersA.Intersect(numbersB);
+
+            foreach (var n in result)
+			{
+                yield return n;
+			}
         }
 
         /// <summary>
@@ -80,8 +103,13 @@ namespace Linq
         {
             List<Product> products = Products.ProductList;
             List<Customer> customers = Customers.CustomerList;
-            
-            throw new NotImplementedException();
+
+            var result = products.Select(p => p.ProductName[0]).Intersect(customers.Select(c => c.CompanyName[0]));
+
+            foreach (var item in result)
+            {
+                yield return item;
+            }
         }
 
         /// <summary>
@@ -92,8 +120,13 @@ namespace Linq
         {
             int[] numbersA = {0, 2, 4, 5, 6, 8, 9};
             int[] numbersB = {1, 3, 5, 7, 8};
-            
-            throw new NotImplementedException();
+
+            var result = numbersA.Except(numbersB);
+
+            foreach (var n in result)
+            {
+                yield return n;
+            }
         }
 
         /// <summary>
@@ -104,8 +137,13 @@ namespace Linq
         {
             List<Product> products = Products.ProductList;
             List<Customer> customers = Customers.CustomerList;
-            
-            throw new NotImplementedException();
+
+            var result = products.Select(p => p.ProductName[0]).Except(customers.Select(c => c.CompanyName[0]));
+
+            foreach (var item in result)
+            {
+                yield return item;
+            }
         }
     }
 }

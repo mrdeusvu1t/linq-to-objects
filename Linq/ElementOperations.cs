@@ -21,8 +21,8 @@ namespace Linq
         public static Product FirstElement()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            return products.Skip(10).First();
         }
 
         /// <summary>
@@ -32,8 +32,8 @@ namespace Linq
         public static string FirstMatchingElement()
         {
             string[] strings = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            
-            throw new NotImplementedException();
+
+            return strings.First(str => str.StartsWith('o'));
         }
 
         /// <summary>
@@ -44,8 +44,8 @@ namespace Linq
         public static int MaybeFirstElement()
         {
             int[] numbers = { };
-            
-            throw new NotImplementedException();
+
+            return numbers.FirstOrDefault();
         }
 
         /// <summary>
@@ -56,8 +56,8 @@ namespace Linq
         public static Product MaybeFirstMatchingElement()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            return products.FirstOrDefault(p => p.ProductId == 789);
         }
 
         /// <summary>
@@ -68,8 +68,8 @@ namespace Linq
         public static int ElementAtPosition()
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
-            
-            throw new NotImplementedException();
+
+            return numbers.Where(n => n > 5).ElementAt(1);
         }
         
         /// <summary>
@@ -79,8 +79,8 @@ namespace Linq
         public static string LastMatchingElement()
         {
             string[] strings = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            
-            throw new NotImplementedException();
+
+            return strings.Last(str => str.Contains('o'));
         }
         
         /// <summary>
@@ -91,8 +91,8 @@ namespace Linq
         public static int MaybeLastElement()
         {
             int[] numbers = { };
-            
-            throw new NotImplementedException();
+
+            return numbers.LastOrDefault();
         }
         
         /// <summary>
@@ -103,8 +103,22 @@ namespace Linq
         public static string SingleMoreThanOneMatchingElement()
         {
             string[] strings = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            
-            throw new NotImplementedException();
+
+            string str = null;
+            for (int i = 0; i < strings.Length; i++)
+			{
+                if (str != null && strings[i].Contains('o'))
+				{
+                    throw new InvalidOperationException();
+				}
+
+                if (strings[i].Contains('o'))
+				{
+                    str = strings[i];
+				}
+			}
+
+            return str;
         }
         
         /// <summary>
@@ -115,8 +129,22 @@ namespace Linq
         public static string SingleNoMatchingElement()
         {
             string[] strings = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            
-            throw new NotImplementedException();
+
+            string str = null;
+            for (int i = 0; i < strings.Length; i++)
+            {
+                if (str != null && strings[i].Contains('o'))
+                {
+                    throw new InvalidOperationException();
+                }
+
+                if (strings[i].Contains('o'))
+                {
+                    str = strings[i];
+                }
+            }
+
+            return str;
         }
         
         /// <summary>
@@ -126,9 +154,9 @@ namespace Linq
         /// <returns>The value null.</returns>
         public static string MaybeSingleMatchingElement()
         {
-            string[] strings = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            
-            throw new NotImplementedException();
+            string[] strings = {"three","five", "six", "seven", "eight", "nine"};
+
+            return strings.FirstOrDefault(str => str.Contains('o'));
         }
     }
 }

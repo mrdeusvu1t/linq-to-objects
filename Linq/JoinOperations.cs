@@ -30,8 +30,15 @@ namespace Linq
             };
 
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            var myProducts = from c in categories
+                             join p in products on c equals p.Category
+                             select new { category = p.Category, productName = p.ProductName };
+
+            foreach(var p in myProducts)
+			{
+                yield return (p.category, p.productName);
+			}
         }
 
         /// <summary>
@@ -50,8 +57,22 @@ namespace Linq
             };
 
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            var myProducts = categories.GroupJoin(
+                products,
+                c => c,
+                p => p.Category,
+                (с, product) => new
+				{
+                    category = с,
+                    productsName = product.Select(p => p)
+				}
+                );
+
+            foreach (var p in myProducts)
+			{
+                yield return (p.category, p.productsName);
+			}
         }
 
         /// <summary>
@@ -72,8 +93,16 @@ namespace Linq
             };
 
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            var myProducts = from c in categories
+                             join p in products on c equals p.Category into g
+                             from subProduct in g.DefaultIfEmpty()
+                             select new { category = c, productName = subProduct?.ProductName ?? "(No products)" };
+
+            foreach (var p in myProducts)
+			{
+                yield return (p.category, p.productName);
+			}
         }
     }
 }

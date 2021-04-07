@@ -22,8 +22,8 @@ namespace Linq
         {
             var wordsA = new [] { "cherry", "apple", "blueberry" };
             var wordsB = new [] { "cherry", "apple", "blueberry" };
-            
-            throw new NotImplementedException();
+
+            return wordsA.SequenceEqual(wordsB);
         }
 
         /// <summary>
@@ -34,8 +34,8 @@ namespace Linq
         {
             var wordsA = new [] { "cherry", "apple", "blueberry" };
             var wordsB = new [] { "apple", "blueberry", "cherry" };
-            
-            throw new NotImplementedException();
+
+            return wordsA.SequenceEqual(wordsB);
         }
         
         /// <summary>
@@ -46,7 +46,7 @@ namespace Linq
         {
             string[] words = { "believe", "relief", "receipt", "field" };
 
-            throw new NotImplementedException();
+            return words.Any(w => w.Contains("ei"));
         }
 
         /// <summary>
@@ -56,8 +56,16 @@ namespace Linq
         public static IEnumerable<(string category, IEnumerable<Product> products)> GroupedAnyMatchedElements()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            var myProducts = from p in products
+                             group p by p.Category into g
+                             where g.Any(p => p.UnitsInStock == 0)
+                             select (g.Key, g);                           
+
+            foreach(var p in myProducts)
+			{
+                yield return (p.Key, p.g);
+			}
         }
 
         /// <summary>
@@ -68,7 +76,7 @@ namespace Linq
         {
             int[] numbers = { 1, 11, 3, 19, 41, 65, 19 };
 
-            throw new NotImplementedException();
+            return numbers.All(n => n % 2 != 0);
         }
 
         /// <summary>
@@ -78,8 +86,16 @@ namespace Linq
         public static IEnumerable<(string category, IEnumerable<Product> products)> GroupedAllMatchedElements()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            var myProducts = from p in products
+                             group p by p.Category into g
+                             where g.All(p => p.UnitsInStock > 0)
+                             select (g.Key, g);
+
+            foreach (var p in myProducts)
+            {
+                yield return (p.Key, p.g);
+            }
         }
         
         /// <summary>
@@ -90,7 +106,7 @@ namespace Linq
         {
             int[] numbers =  { 2, 3, 4 };
 
-            throw new NotImplementedException();
+            return numbers.Any(n => n == 3);
         }
     }
 }

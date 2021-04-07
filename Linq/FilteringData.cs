@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Linq.DataSources;
 
 namespace Linq
@@ -19,8 +20,13 @@ namespace Linq
         public static IEnumerable<int> LowNumbers()
         {
             int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
-            
-            throw new NotImplementedException();
+
+            var myNumbers = from i in numbers where i < 5 select i;
+
+            foreach (var i in myNumbers)
+			{
+                yield return i;
+			}
         }
 
         /// <summary>
@@ -30,8 +36,13 @@ namespace Linq
         public static IEnumerable<Product> ProductsOutOfStock()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            var myProducts = from p in products where p.UnitsInStock == 0 select p;
+
+            foreach (var product in myProducts)
+			{
+                yield return product;
+			}
         }
 
         /// <summary>
@@ -41,8 +52,15 @@ namespace Linq
         public static IEnumerable<Product> ExpensiveProductsInStock()
         {
             List<Product> products = Products.ProductList;
-            
-            throw new NotImplementedException();
+
+            var myProducts = from p in products
+                             where p.UnitsInStock > 0 && p.UnitPrice > 50
+                             select p;
+
+            foreach (var product in myProducts)
+			{
+                yield return product;
+			}
         }
 
         /// <summary>
@@ -52,8 +70,17 @@ namespace Linq
         public static IEnumerable<string> IndexedWhere()
         {
             string[] digits = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            
-            throw new NotImplementedException();
+
+            int i = 0;
+
+            var myDigits = from str in digits
+                           where str.Length < i++
+                           select str;
+
+            foreach (var str in myDigits)
+			{
+                yield return str;
+			}
         }
     }
 }
